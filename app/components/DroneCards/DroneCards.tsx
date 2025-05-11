@@ -18,7 +18,7 @@ const drones = [
 		name: 'AeroVision X',
 		image: '/drone-1.jpg',
 		price: 69990,
-		oldPrice: null,
+		oldPrice: 80000,
 		isHit: false,
 	},
 	{
@@ -55,9 +55,11 @@ const drones = [
 	},
 ]
 
+
+
+
 export default function DroneCards() {
-	// Функция для вычисления процента скидки
-	const calculateDiscount = (oldPrice, newPrice) => {
+	const calculateDiscount = (oldPrice:number, newPrice:number) => {
 		if (!oldPrice) return null
 		return Math.round(((oldPrice - newPrice) / oldPrice) * 100)
 	}
