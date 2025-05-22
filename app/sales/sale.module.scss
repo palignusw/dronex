@@ -1,0 +1,165 @@
+
+
+.wrapper {
+    padding: 80px 40px;
+    background-color: #121212;
+  }
+  
+  .title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #f1f1f1;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+  }
+  
+  .card {
+    position: relative;
+    border: 1px solid #2b2b2b;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #1e1e1e;
+    transition: box-shadow 0.3s, transform 0.3s;
+  
+    &:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      transform: translateY(-4px);
+    }
+  }
+  
+  .badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: #ff3b3b;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  .image {
+    border-radius: 8px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  
+  .name {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+  
+  .prices {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6ca0ff;
+  }
+  
+  .oldPrice {
+    font-size: 16px;
+    color: #777;
+    text-decoration: line-through;
+  }
+  
+  .button {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #3d3d3d;
+    }
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .buyButton {
+    background-color: transparent;
+    border: 1px solid #6ca0ff;
+    color: #6ca0ff;
+    padding: 12px;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  
+    &:hover {
+      background-color: #6ca0ff;
+      color: #121212;
+    }
+  }
+  
+  .notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+  }
+  
+  .success {
+    background-color: #4caf50;
+  }
+  
+  .error {
+    background-color: #f44336;
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(10px); }
+  }
+  
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  
+    .button {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .title {
+      font-size: 28px;
+    }
+  
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  

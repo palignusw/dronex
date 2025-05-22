@@ -26,7 +26,7 @@ const drones = [
 		name: 'Falcon Zoom',
 		image: '/drone-1.jpg',
 		price: 79990,
-		oldPrice: 100000,
+		oldPrice: null,
 		isHit: true,
 	},
 	{
@@ -59,7 +59,7 @@ const drones = [
 
 
 export default function DroneCards() {
-	const calculateDiscount = (oldPrice:number, newPrice:number) => {
+	const calculateDiscount = (oldPrice:number|null, newPrice:number) => {
 		if (!oldPrice) return null
 		return Math.round(((oldPrice - newPrice) / oldPrice) * 100)
 	}

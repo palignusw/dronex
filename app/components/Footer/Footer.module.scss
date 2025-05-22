@@ -1,0 +1,125 @@
+// components/Footer.module.scss
+$break-sm: 640px;   // ~ Tailwind sm
+$break-md: 768px;   // ~ md
+$break-lg: 1024px;  // ~ lg
+
+.footer {
+  background-color: #111;
+  color: #ccc;
+  padding: clamp(2rem, 5vw, 4rem) 1rem clamp(1.5rem, 4vw, 2rem);
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.column {
+  h2,
+  h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #a78bfa; // фиолетовый акцент
+    }
+  }
+}
+
+/* INPUT + BUTTON */
+.footer {
+    // ...existing code...
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      input {
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        border: none;
+        background-color: #1a1a1a;
+        color: #fff;
+        margin-bottom: 0.5rem;
+        width: 100%;
+      }
+  
+      button {
+        background-color: #3b82f6;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 6px;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+  
+        &:hover {
+          background-color: #2563eb;
+        }
+      }
+    }
+  }
+
+.bottom {
+  margin-top: 3rem;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* ───────────────────────────────
+   RESPONSIVE
+   ─────────────────────────────── */
+/* ≤ 640px — мобильные */
+@media (max-width: 640px) {
+    .container {
+      grid-template-columns: 1fr;   /* колонки становятся блоками */
+      text-align: center;
+    }
+  
+    .column {
+      margin-bottom: 2rem; /* отступ между блоками */
+    }
+  
+    .bottom {
+      font-size: 0.75rem;
+    }
+  }
+  
+  /* 641px – 767px — небольшие планшеты */
+  @media (min-width: 641px) and (max-width: 767px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    }
+  }
+  
+  /* 768px – 1023px — крупные планшеты / малые ноуты */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+      grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    }
+  }
+  

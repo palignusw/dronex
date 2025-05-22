@@ -2,6 +2,7 @@ import './globals.css'
 import Header from './components/Header/Header'
 import { ReactNode } from 'react'
 import { Orbitron } from 'next/font/google'
+import Footer from './components/Footer/Footer'
 
 const orbitron = Orbitron({
 	weight: ['600'],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 			<body className={orbitron.className}>
 				<Header />
 				<main>{children}</main>
+				<Footer />
 			</body>
 		</html>
 	)
