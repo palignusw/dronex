@@ -1,5 +1,6 @@
 import styles from './Footer.module.scss'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
 	return (
@@ -52,14 +53,13 @@ export default function Footer() {
 							target='_blank'
 							rel='noopener noreferrer'
 							aria-label='TikTok'
-					
 						>
-							<img
-								src='tiktok1.png'
+							<Image
+								src='/tiktok1.png' // путь к вашей иконке в папке public
 								alt='TikTok'
+								width={40}
+								height={40}
 								style={{
-									width: 40,
-									height: 40,
 									objectFit: 'contain',
 									display: 'block',
 								}}

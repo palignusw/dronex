@@ -1,5 +1,4 @@
 import {data} from '../drones'
-import styles from 'sale.module.scss'
 
 export default function Sales(){
 

@@ -5,6 +5,7 @@ import { use, useState } from 'react'
 import styles from './DroneDetail.module.scss'
 import React from 'react'
 import axios from 'axios'
+import Image from 'next/image'
 
 
 const drones = [
@@ -132,20 +133,26 @@ export default function DroneDetail({
 				</div>
 			)}
 			<div className={styles.gallery}>
-				<img
+				<Image
 					src={selectedImage}
 					alt={drone.name}
 					className={styles.mainImage}
+					width={600} 
+					height={400} 
+					
 				/>
 				<div className={styles.thumbnails}>
 					{drone.images.filter(Boolean).map((img, i) => (
-						<img
+						<Image
 							key={i}
 							src={img}
 							alt={`thumb-${i}`}
 							className={`${styles.thumb} ${
 								selectedImage === img ? styles.active : ''
 							}`}
+							width={100} // или нужная ширина
+							height={100} // или нужная высота
+							style={{ objectFit: 'cover', cursor: 'pointer' }}
 							onClick={() => setSelectedImage(img)}
 						/>
 					))}
